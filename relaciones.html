@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +17,7 @@
             --text-muted: #555555;
             --white: #ffffff;
             --cta-color: #f287bc;
-            --shadow: 0 4px 15px rgba(0,0,0,0.05);
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         * {
@@ -32,7 +33,9 @@
             background-color: var(--white);
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             font-family: 'Playfair Display', serif;
             color: var(--text-dark);
             line-height: 1.2;
@@ -55,12 +58,12 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         #timer {
             font-family: monospace;
-            background: rgba(0,0,0,0.1);
+            background: rgba(0, 0, 0, 0.1);
             padding: 2px 8px;
             border-radius: 4px;
             margin-left: 5px;
@@ -101,24 +104,32 @@
             padding: 20px;
         }
 
-        .mockup-main { width: 600px; height: 400px; }
-        
+        .mockup-main {
+            width: 600px;
+            height: 400px;
+        }
+
 
         /* --- Sections --- */
         section {
             padding: 80px 0;
         }
 
-        .bg-nude { background-color: var(--nude-light); }
-        .bg-pink { background-color: var(--pink-soft); }
+        .bg-nude {
+            background-color: var(--nude-light);
+        }
+
+        .bg-pink {
+            background-color: var(--pink-soft);
+        }
 
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 40px;
         }
-        
-        
+
+
         /* --- Testimonios (CORREGIDO) --- */
         .testimonials-grid {
             display: grid;
@@ -259,7 +270,7 @@
             background: var(--white);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             border: 2px solid var(--primary);
         }
 
@@ -281,7 +292,9 @@
             border-bottom: 1px solid #eee;
         }
 
-        .pricing-item:last-child { border-bottom: none; }
+        .pricing-item:last-child {
+            border-bottom: none;
+        }
 
         .price-tag {
             font-size: 3rem;
@@ -338,7 +351,7 @@
         }
 
 
- /* --- SECCIÓN FINAL (REDISEÑADA) --- */
+        /* --- SECCIÓN FINAL (REDISEÑADA) --- */
         .final-cta-section {
             background-color: var(--nude-light);
             text-align: center;
@@ -354,7 +367,7 @@
             width: 100%;
             height: auto;
             border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
         .final-text-container {
@@ -372,12 +385,22 @@
 
         /* --- Responsive --- */
         @media (max-width: 768px) {
-            .headline { font-size: 2.2rem; }
-            section { padding: 50px 0; }
-            .btn-cta { width: 100%; padding: 20px 10px; }
+            .headline {
+                font-size: 2.2rem;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            .btn-cta {
+                width: 100%;
+                padding: 20px 10px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Urgency Bar with Timer -->
@@ -390,9 +413,9 @@
         <div class="container">
             <h1 class="headline">¿Por qué siempre terminas con el mismo tipo de hombre… aunque prometas que esta vez será diferente?</h1>
             <p class="subheadline">Estás cansada de repetir patrones, idealizar vínculos y perder tu tiempo valioso en relaciones que no avanzan.</p>
-            
+
             <div class="image-placeholder mockup-main">
-                        <img src="https://i.imgur.com/TPTPfDI.jpeg" alt="Portada del Ebook Velas de Mascotas Hiperrealistas" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="https://i.imgur.com/TPTPfDI.jpeg" alt="Portada del Ebook Velas de Mascotas Hiperrealistas" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
 
             <div class="cta-container">
@@ -418,7 +441,7 @@
         <div class="container">
             <h2 class="section-title">Te presento: La Guía Para Encontrar Al Hombre Correcto Sin Perder Tu Tiempo</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Este no es un libro romántico de "esperar al príncipe azul". Es una guía práctica diseñada para mujeres que quieren resultados reales. Aquí no aprenderás a “retener” hombres. <strong>Aprenderás a filtrarlos.</strong></p>
-            
+
             <div class="grid">
                 <div class="feature-card">
                     <h3>🧠 Entiende tu Patrón</h3>
@@ -449,7 +472,7 @@
         <div class="container">
             <h2 class="section-title">Lo que dicen otras mujeres</h2>
             <div class="testimonials-grid">
-                
+
                 <div class="testimonial-card">
                     <div class="testimonial-img-wrapper">
                         <img src="https://i.imgur.com/vMMihCs.jpeg" alt="Marina G." class="testimonial-img">
@@ -517,13 +540,9 @@
 
             <!-- 6. GARANTÍA -->
             <div class="guarantee-box">
-                <div  style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 20px;">
-                    
-                                <img 
-                src="https://fertaboada.com/wp-content/uploads/2023/07/Sello-7-dias-garantia.webp" 
-                alt="Garantía de 7 días"
-                style="width: 120px; height: auto; margin: 0 auto 20px; display: block;"
-            >
+                <div style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 20px;">
+
+                    <img src="https://fertaboada.com/wp-content/uploads/2023/07/Sello-7-dias-garantia.webp" alt="Garantía de 7 días" style="width: 120px; height: auto; margin: 0 auto 20px; display: block;">
                 </div>
                 <h3>Garantía de Satisfacción de 7 Días</h3>
                 <p>Estoy tan segura de que este contenido cambiará tu forma de ver las relaciones, que si en 7 días sientes que no es para ti, te devuelvo el 100% de tu dinero. Sin preguntas.</p>
@@ -560,14 +579,14 @@
         </div>
     </section>
 
-<!-- 7. FINAL CTA RE-ORGANIZADO -->
+    <!-- 7. FINAL CTA RE-ORGANIZADO -->
     <section class="final-cta-section">
         <div class="container">
             <div class="final-text-container">
                 <h2 class="section-title">Elegir bien no es suerte, es inteligencia emocional.</h2>
                 <p style="margin-bottom: 30px; font-size: 1.1rem; color: var(--text-muted);">Tu tiempo es tu recurso más valioso. No lo sigas desperdiciando con las personas equivocadas por falta de herramientas.</p>
             </div>
-            
+
             <!-- Imagen bien alineada -->
             <div class="final-mockup-wrapper">
                 <img src="https://i.imgur.com/UTvuAL1.jpeg" alt="Manual Inteligencia Emocional">
@@ -592,8 +611,9 @@
 
     <script>
         function startTimer(duration, display) {
-            var timer = duration, minutes, seconds;
-            setInterval(function () {
+            var timer = duration,
+                minutes, seconds;
+            setInterval(function() {
                 minutes = parseInt(timer / 60, 10);
                 seconds = parseInt(timer % 60, 10);
 
@@ -608,11 +628,12 @@
             }, 1000);
         }
 
-        window.onload = function () {
+        window.onload = function() {
             var thirtyMinutes = 60 * 30,
                 display = document.querySelector('#timer');
             startTimer(thirtyMinutes, display);
         };
     </script>
 </body>
+
 </html>
