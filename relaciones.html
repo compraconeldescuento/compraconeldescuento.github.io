@@ -31,11 +31,10 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--white);
+            overflow-x: hidden; /* Evita scroll horizontal */
         }
 
-        h1,
-        h2,
-        h3 {
+        h1, h2, h3 {
             font-family: 'Playfair Display', serif;
             color: var(--text-dark);
             line-height: 1.2;
@@ -52,8 +51,8 @@
             background-color: var(--primary);
             color: var(--white);
             text-align: center;
-            padding: 12px 0;
-            font-size: 1rem;
+            padding: 12px 10px;
+            font-size: clamp(0.8rem, 3vw, 1rem);
             font-weight: 700;
             position: sticky;
             top: 0;
@@ -76,7 +75,7 @@
         }
 
         .headline {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
             margin-bottom: 20px;
             max-width: 900px;
             margin-left: auto;
@@ -84,13 +83,13 @@
         }
 
         .subheadline {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             color: var(--text-dark);
             max-width: 700px;
             margin: 0 auto 30px;
         }
         
-        /* --- Responsive Image Container --- */
+        /* --- Responsive Image Container (CORREGIDO) --- */
         .mockup-main {
             width: 100%;
             max-width: 600px; /* Ancho máximo en escritorio */
@@ -99,37 +98,23 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             background: rgba(255, 255, 255, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: block; /* Cambiado para evitar conflictos de altura */
+            height: auto;   /* Eliminado el valor fijo de 400px */
         }
 
         .mockup-main img {
             width: 100%;
-            height: auto; /* Permite que la altura se ajuste proporcionalmente */
+            height: auto; 
             display: block;
             object-fit: contain;
         }
 
         /* --- Placeholder Styles --- */
         .image-placeholder {
-            border: 2px;
-            background: rgba(255, 255, 255, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #999;
-            margin: 20px auto;
-            border-radius: 8px;
-            padding: 20px;
+            border: none;
+            background: white;
+            padding: 0;
         }
-
-        .mockup-main {
-            width: 600px;
-            height: 400px;
-        }
-
 
         /* --- Sections --- */
         section {
@@ -146,15 +131,14 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             margin-bottom: 40px;
         }
 
-
-        /* --- Testimonios (CORREGIDO) --- */
+        /* --- Testimonios --- */
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 20px;
         }
@@ -197,7 +181,6 @@
             color: var(--text-muted);
             margin-bottom: 20px;
             font-size: 1.05rem;
-            position: relative;
         }
 
         .testimonial-name {
@@ -211,7 +194,7 @@
         .problem-box {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px;
+            padding: 40px 25px;
             background: var(--white);
             border-radius: 20px;
             box-shadow: var(--shadow);
@@ -233,7 +216,7 @@
             background-color: var(--cta-color);
             color: var(--white);
             padding: 20px 40px;
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 3vw, 1.25rem);
             font-weight: 700;
             text-decoration: none;
             border-radius: 50px;
@@ -241,6 +224,7 @@
             box-shadow: 0 10px 20px rgba(242, 135, 188, 0.3);
             cursor: pointer;
             border: none;
+            max-width: 100%; /* Evita que el botón se salga en pantallas muy pequeñas */
         }
 
         .btn-cta:hover {
@@ -251,7 +235,7 @@
         /* --- Features & Grid --- */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
@@ -267,21 +251,6 @@
             margin-bottom: 15px;
             font-size: 1.4rem;
             color: var(--primary);
-        }
-
-        /* --- Testimonials --- */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .testimonial-card {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: var(--shadow);
         }
 
         /* --- Pricing Table --- */
@@ -303,7 +272,7 @@
         }
 
         .pricing-content {
-            padding: 40px;
+            padding: 40px 25px;
         }
 
         .pricing-item {
@@ -318,7 +287,7 @@
         }
 
         .price-tag {
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
             font-weight: 700;
             text-align: center;
             margin: 20px 0;
@@ -364,15 +333,14 @@
         /* --- Guarantee --- */
         .guarantee-box {
             text-align: center;
-            padding: 40px;
+            padding: 40px 20px;
             border: 2px solid var(--primary);
             border-radius: 20px;
             max-width: 700px;
             margin: 40px auto;
         }
 
-
-        /* --- SECCIÓN FINAL (REDISEÑADA) --- */
+        /* --- SECCIÓN FINAL --- */
         .final-cta-section {
             background-color: var(--nude-light);
             text-align: center;
@@ -382,6 +350,7 @@
         .final-mockup-wrapper {
             max-width: 450px;
             margin: 0 auto 30px;
+            padding: 0 20px;
         }
 
         .final-mockup-wrapper img {
@@ -394,22 +363,19 @@
         .final-text-container {
             max-width: 700px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
         footer {
             background: var(--text-dark);
             color: var(--white);
-            padding: 40px 0;
+            padding: 40px 20px;
             text-align: center;
             font-size: 0.9rem;
         }
 
-        /* --- Responsive --- */
+        /* --- Responsive Mobile Overrides --- */
         @media (max-width: 768px) {
-            .headline {
-                font-size: 2.2rem;
-            }
-
             section {
                 padding: 50px 0;
             }
@@ -417,6 +383,12 @@
             .btn-cta {
                 width: 100%;
                 padding: 20px 10px;
+            }
+            
+            .pricing-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 5px;
             }
         }
     </style>
@@ -435,8 +407,8 @@
             <h1 class="headline">¿Por qué siempre terminas con el mismo tipo de hombre… aunque prometas que esta vez será diferente?</h1>
             <p class="subheadline">Estás cansada de repetir patrones, idealizar vínculos y perder tu tiempo valioso en relaciones que no avanzan.</p>
 
-<div class="mockup-main">
-                <img src="https://i.imgur.com/TPTPfDI.jpeg" alt="Portada del Ebook Inteligencia Emocional">
+            <div class="mockup-main">
+                <img src="https://i.imgur.com/TPTPfDI.jpeg" alt="Portada del Ebook">
             </div>
 
             <div class="cta-container">
@@ -461,7 +433,7 @@
     <section class="bg-nude">
         <div class="container">
             <h2 class="section-title">Te presento: La Guía Para Encontrar Al Hombre Correcto Sin Perder Tu Tiempo</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Este no es un libro romántico de "esperar al príncipe azul". Es una guía práctica diseñada para mujeres que quieren resultados reales. Aquí no aprenderás a “retener” hombres. <strong>Aprenderás a filtrarlos.</strong></p>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; padding: 0 20px;">Este no es un libro romántico de "esperar al príncipe azul". Es una guía práctica diseñada para mujeres que quieren resultados reales. Aquí no aprenderás a “retener” hombres. <strong>Aprenderás a filtrarlos.</strong></p>
 
             <div class="grid">
                 <div class="feature-card">
@@ -488,7 +460,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE TESTIMONIOS CORREGIDA -->
+    <!-- 4. SECCIÓN DE TESTIMONIOS -->
     <section>
         <div class="container">
             <h2 class="section-title">Lo que dicen otras mujeres</h2>
@@ -522,7 +494,7 @@
         </div>
     </section>
 
-    <!-- 5. OFERTA (VALOR PERCIBIDO) -->
+    <!-- 5. OFERTA -->
     <section class="bg-pink" id="precio">
         <div class="container">
             <h2 class="section-title">Todo lo que obtienes hoy</h2>
@@ -538,18 +510,18 @@
                     </div>
                     <div class="pricing-item">
                         <span>🎁 BONO 1: Checklist para Citas (PDF)</span>
-                        <span style="color: var(--cta-color); font-weight: bold;">GRATIS</span>
+                        <span style="color: var(--primary); font-weight: bold;">GRATIS</span>
                     </div>
                     <div class="pricing-item">
                         <span>🎁 BONO 2: Guía de Libros Recomendados</span>
-                        <span style="color: var(--cta-color); font-weight: bold;">GRATIS</span>
+                        <span style="color: var(--primary); font-weight: bold;">GRATIS</span>
                     </div>
                     <div class="pricing-item">
                         <span>🎁 BONO 3: Ejercicio "Hombre Ideal"</span>
-                        <span style="color: var(--cta-color); font-weight: bold;">GRATIS</span>
+                        <span style="color: var(--primary); font-weight: bold;">GRATIS</span>
                     </div>
                     <div class="price-tag">
-                        <small style="font-size: 1rem; text-decoration: line-through; color: #999;">$19.13</small><br>
+                        <small style="font-size: 1.2rem; text-decoration: line-through; color: #999;">$19.13</small><br>
                         $8.99
                     </div>
                     <p style="text-align: center; margin-bottom: 20px; font-size: 0.9rem;">Pago único. Acceso inmediato.</p>
@@ -561,17 +533,14 @@
 
             <!-- 6. GARANTÍA -->
             <div class="guarantee-box">
-                <div style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 20px;">
-
-                    <img src="https://fertaboada.com/wp-content/uploads/2023/07/Sello-7-dias-garantia.webp" alt="Garantía de 7 días" style="width: 120px; height: auto; margin: 0 auto 20px; display: block;">
-                </div>
+                <img src="https://fertaboada.com/wp-content/uploads/2023/07/Sello-7-dias-garantia.webp" alt="Garantía de 7 días" style="width: 120px; height: auto; margin: 0 auto 20px; display: block;">
                 <h3>Garantía de Satisfacción de 7 Días</h3>
                 <p>Estoy tan segura de que este contenido cambiará tu forma de ver las relaciones, que si en 7 días sientes que no es para ti, te devuelvo el 100% de tu dinero. Sin preguntas.</p>
             </div>
         </div>
     </section>
 
-    <!-- 7. FAQ (OBJECIONES) -->
+    <!-- 7. FAQ -->
     <section>
         <div class="container">
             <h2 class="section-title">Preguntas Frecuentes</h2>
@@ -600,7 +569,7 @@
         </div>
     </section>
 
-    <!-- 7. FINAL CTA RE-ORGANIZADO -->
+    <!-- 8. FINAL CTA -->
     <section class="final-cta-section">
         <div class="container">
             <div class="final-text-container">
@@ -608,7 +577,6 @@
                 <p style="margin-bottom: 30px; font-size: 1.1rem; color: var(--text-muted);">Tu tiempo es tu recurso más valioso. No lo sigas desperdiciando con las personas equivocadas por falta de herramientas.</p>
             </div>
 
-            <!-- Imagen bien alineada -->
             <div class="final-mockup-wrapper">
                 <img src="https://i.imgur.com/UTvuAL1.jpeg" alt="Manual Inteligencia Emocional">
             </div>
@@ -621,7 +589,6 @@
             </div>
         </div>
     </section>
-
 
     <footer>
         <div class="container">
@@ -644,7 +611,7 @@
                 display.textContent = minutes + ":" + seconds;
 
                 if (--timer < 0) {
-                    timer = duration; // Reset timer or stop
+                    timer = duration; 
                 }
             }, 1000);
         }
@@ -658,4 +625,3 @@
 </body>
 
 </html>
-
